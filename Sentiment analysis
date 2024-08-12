@@ -1,0 +1,22 @@
+from textblob import TextBlob
+
+# Sample text data
+texts = [
+    "I love this product! It works amazingly well.",
+    "This is the worst experience I have ever had.",
+    "The service was okay, neither good nor bad.",
+]
+
+# Perform sentiment analysis
+for text in texts:
+    blob = TextBlob(text)
+    sentiment = blob.sentiment
+    print(f"Text: {text}")
+    print(f"Polarity: {sentiment.polarity}, Subjectivity: {sentiment.subjectivity}")
+    if sentiment.polarity > 0:
+        print("Sentiment: Positive")
+    elif sentiment.polarity < 0:
+        print("Sentiment: Negative")
+    else:
+        print("Sentiment: Neutral")
+    print()
